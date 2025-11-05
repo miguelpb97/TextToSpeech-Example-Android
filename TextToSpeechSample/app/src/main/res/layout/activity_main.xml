@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#BFBBBB"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <include
+            android:id="@+id/toolbar_menu"
+            layout="@layout/toolbar" />
+
+        <EditText
+            android:id="@+id/et_texto_a_traducir"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="32dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:hint="@string/presiona_boton"
+            android:inputType="text"
+            android:textColor="#636363" />
+
+        <EditText
+            android:id="@+id/et_texto_traducido"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_below="@+id/et_texto_a_traducir"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="20dp"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:hint="@string/traduccion"
+            android:inputType="text"
+            android:textColor="#636363" />
+
+        <TableLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_texto_traducido"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_idioma_origen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/idioma_origen" />
+
+            <Spinner
+                android:id="@+id/spinner_idioma_origen"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#000000" />
+
+            <TextView
+                android:id="@+id/tv_idioma_a_traducir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:text="@string/idioma_a_traducir" />
+
+            <Spinner
+                android:id="@+id/spinner_idioma_traduccion"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#000000" />
+        </TableLayout>
+
+        <Button
+            android:id="@+id/boton_reproducir"
+            android:layout_width="335dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/ll1"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#000000"
+            android:text="@string/reproducir"
+            app:icon="@drawable/play_arrow_icon_white" />
+
+        <Button
+            android:id="@+id/boton_traducir"
+            android:layout_width="335dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/boton_reproducir"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#000000"
+            android:text="@string/traducir"
+            app:icon="@drawable/translate_icon_white" />
+
+        <Switch
+            android:id="@+id/switch_detectar_idioma_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/boton_traducir"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:minHeight="48dp"
+            android:text="@string/detectar_idioma_automaticamente"
+            android:trackTint="#85D32C"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Button
+            android:id="@+id/boton_capturar_voz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/switch_detectar_idioma_auto"
+            android:layout_marginStart="120dp"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="#000000"
+            android:contentDescription="@string/traducir"
+            android:text="@string/captar_voz"
+            app:icon="@drawable/mic_icon_white" />
+
+    </RelativeLayout>
+
+</ScrollView>

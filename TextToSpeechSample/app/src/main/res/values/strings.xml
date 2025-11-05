@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TextToSpeech-Sample</string>
+    <string name="reproducir">Reproducir</string>
+    <string name="traducir">Traducir</string>
+    <string name="idioma_origen">Idioma origen</string>
+    <string name="idioma_a_traducir">Idioma a traducir</string>
+    <string name="presiona_boton">Presiona el botón del micrófono para capturar tu voz</string>
+    <string name="traduccion">Traducción</string>
+    <string name="detectar_idioma_automaticamente">Detectar idioma automaticamente</string>
+    <string name="captar_voz">Captar voz</string>
+
+
+</resources>
