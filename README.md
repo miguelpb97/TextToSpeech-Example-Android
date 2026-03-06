@@ -1,4 +1,4 @@
-#Project: Task Manager API
+# Project: TextToSpeech-Translator Android App
 Tech: Java, Kotlin
 
 Features:
