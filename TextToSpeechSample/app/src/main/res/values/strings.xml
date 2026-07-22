@@ -6,8 +6,14 @@
     <string name="idioma_a_traducir">Idioma a traducir</string>
     <string name="presiona_boton">Presiona el botón del micrófono para capturar tu voz</string>
     <string name="traduccion">Traducción</string>
-    <string name="detectar_idioma_automaticamente">Detectar idioma automaticamente</string>
+    <string name="detectar_idioma_automaticamente">Detectar idioma automáticamente</string>
     <string name="captar_voz">Captar voz</string>
 
-
+    <!-- Mensajes de error mostrados al usuario -->
+    <string name="error_reconocer_idioma">No se pudo reconocer el idioma de origen</string>
+    <string name="error_traducir">No se pudo traducir el texto</string>
+    <string name="error_descargar_modelo">No se pudo descargar el modelo de traducción</string>
+    <string name="error_reconocimiento_voz_no_disponible">El reconocimiento de voz no está disponible en este dispositivo</string>
+    <string name="error_texto_vacio">Escribe o dicta un texto antes de traducir</string>
+    <string name="error_tts_no_listo">El motor de voz aún se está preparando, inténtalo de nuevo en unos segundos</string>
 </resources>

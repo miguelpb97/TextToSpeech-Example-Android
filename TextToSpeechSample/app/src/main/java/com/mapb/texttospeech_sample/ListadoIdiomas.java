@@ -1,164 +1,58 @@
 package com.mapb.texttospeech_sample;
 
+/**
+ * Catalogo de idiomas soportados por ML Kit (traduccion e identificacion de idioma).
+ * Los arrays son privados: el acceso externo se hace siempre a traves de los
+ * metodos estaticos, para no exponer la representacion interna.
+ */
 public class ListadoIdiomas {
-    // Array con nombres de los idioma disponibles del ML Kit
-    public static String[] idiomasDisponibles = {
-            "Afrikáans",
-            "Árabe",
-            "Bielorruso",
-            "Búlgaro",
-            "Bengalí",
-            "Catalán",
-            "Checo",
-            "Galés",
-            "Danés",
-            "Alemán",
-            "Griego",
-            "Inglés",
-            "Esperanto",
-            "Español",
-            "Estonio",
-            "Persa",
-            "Finés",
-            "Francés",
-            "Irlandés",
-            "Gallego",
-            "Guyaratí",
-            "Hebreo",
-            "Hindi",
-            "Croata",
-            "Haitiano",
-            "Húngaro",
-            "Indonesio",
-            "Islandés",
-            "Italiano",
-            "Japonés",
-            "Georgiano",
-            "Canarés",
-            "Coreano",
-            "Lituano",
-            "Letón",
-            "Macedonio",
-            "Maratí",
-            "Malayo",
-            "Maltés",
-            "Neerlandés",
-            "Noruego",
-            "Polaco",
-            "Portugués",
-            "Rumano",
-            "Ruso",
-            "Eslovaco",
-            "Esloveno",
-            "Albanés",
-            "Sueco",
-            "Suajili",
-            "Tamil",
-            "Telugu",
-            "Tailandés",
-            "Tagalo",
-            "Turco",
-            "Ucraniano",
-            "Urdu",
-            "Vietnamita",
-            "Chino"
-    };
-    // Array con los codigos de idioma disponibles del ML Kit
-    public static String[] codIdiomasDisponibles = {
-            "af",
-            "ar",
-            "be",
-            "bg",
-            "bn",
-            "ca",
-            "cs",
-            "cy",
-            "da",
-            "de",
-            "el",
-            "en",
-            "eo",
-            "es",
-            "et",
-            "fa",
-            "fi",
-            "fr",
-            "ga",
-            "gl",
-            "gu",
-            "he",
-            "hi",
-            "hr",
-            "ht",
-            "hu",
-            "id",
-            "is",
-            "it",
-            "ja",
-            "ka",
-            "kn",
-            "ko",
-            "lt",
-            "lv",
-            "mk",
-            "mr",
-            "ms",
-            "mt",
-            "nl",
-            "no",
-            "pl",
-            "pt",
-            "ro",
-            "ru",
-            "sk",
-            "sl",
-            "sq",
-            "sv",
-            "sw",
-            "ta",
-            "te",
-            "th",
-            "tl",
-            "tr",
-            "uk",
-            "ur",
-            "vi",
-            "zh"
+
+    private static final String[] NOMBRES_IDIOMAS = {
+            "Afrikáans", "Árabe", "Bielorruso", "Búlgaro", "Bengalí", "Catalán",
+            "Checo", "Galés", "Danés", "Alemán", "Griego", "Inglés", "Esperanto",
+            "Español", "Estonio", "Persa", "Finés", "Francés", "Irlandés", "Gallego",
+            "Guyaratí", "Hebreo", "Hindi", "Croata", "Haitiano", "Húngaro", "Indonesio",
+            "Islandés", "Italiano", "Japonés", "Georgiano", "Canarés", "Coreano",
+            "Lituano", "Letón", "Macedonio", "Maratí", "Malayo", "Maltés", "Neerlandés",
+            "Noruego", "Polaco", "Portugués", "Rumano", "Ruso", "Eslovaco", "Esloveno",
+            "Albanés", "Sueco", "Suajili", "Tamil", "Telugu", "Tailandés", "Tagalo",
+            "Turco", "Ucraniano", "Urdu", "Vietnamita", "Chino"
     };
 
-    // Metodo estatico que nos devuelve la lista de nombre de idiomas
+    // Mismo orden que NOMBRES_IDIOMAS: codigo ISO 639-1 de cada idioma.
+    private static final String[] CODIGOS_IDIOMAS = {
+            "af", "ar", "be", "bg", "bn", "ca", "cs", "cy", "da", "de", "el", "en",
+            "eo", "es", "et", "fa", "fi", "fr", "ga", "gl", "gu", "he", "hi", "hr",
+            "ht", "hu", "id", "is", "it", "ja", "ka", "kn", "ko", "lt", "lv", "mk",
+            "mr", "ms", "mt", "nl", "no", "pl", "pt", "ro", "ru", "sk", "sl", "sq",
+            "sv", "sw", "ta", "te", "th", "tl", "tr", "uk", "ur", "vi", "zh"
+    };
+
+    private ListadoIdiomas() {
+        // Clase de utilidades: no se instancia.
+    }
+
+    /** Devuelve el listado de nombres de idioma, en el mismo orden que sus codigos. */
     public static String[] getListaIdiomasDisponibles() {
-        return idiomasDisponibles;
+        return NOMBRES_IDIOMAS;
     }
 
-    // Metodo estatico que nos devuelve el tamano el array
     public static int getSize() {
-        return idiomasDisponibles.length;
+        return NOMBRES_IDIOMAS.length;
     }
 
-    // Metodo estatico que nos devuelve el codigo de idioma del indice pasado por parametro
+    /** Codigo ISO del idioma que ocupa la posicion indicada. */
     public static String getCodIdioma(int indice) {
-        return codIdiomasDisponibles[indice];
+        return CODIGOS_IDIOMAS[indice];
     }
 
-    // Metodo estatico que nos el indice el codigo de idioma del indice pasado por parametro
-    public static int getIndicePorIdioma(String idioma) {
-        for (int i = 0; i < getSize(); i++) {
-            if (idioma.equals(idiomasDisponibles[i])) {
-                return i;
-            }
-        }
-        return 0;
-    }
-
-    // Metodo estatico que nos devuelve el indice en el array del codigo de idioma pasado por parametro
+    /** Posicion en el listado del codigo de idioma indicado, o 0 si no se encuentra. */
     public static int getIndicePorCodIdioma(String codIdioma) {
-        for (int i = 0; i < getSize(); i++) {
-            if (codIdioma.equals(codIdiomasDisponibles[i])) {
+        for (int i = 0; i < CODIGOS_IDIOMAS.length; i++) {
+            if (CODIGOS_IDIOMAS[i].equals(codIdioma)) {
                 return i;
             }
         }
         return 0;
     }
-
 }
